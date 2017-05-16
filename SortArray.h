@@ -11,5 +11,7 @@
 @interface SortArray : NSObject
 
 - (NSNumber *)findHighest:(NSArray *)array;
-
+- (NSNumber *)findLowest:(NSArray *)array;
+- (NSNumber *)findMedian:(NSArray *)array;
+- (NSNumber *)sortArray:(NSArray *)array;
 @end
