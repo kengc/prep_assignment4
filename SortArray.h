@@ -13,5 +13,5 @@
 - (NSNumber *)findHighest:(NSArray *)array;
 - (NSNumber *)findLowest:(NSArray *)array;
 - (NSNumber *)findMedian:(NSArray *)array;
-- (NSNumber *)sortArray:(NSArray *)array;
+- (NSArray *)sortArray:(NSArray *)array;
 @end

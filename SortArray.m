@@ -12,18 +12,48 @@
 
 - (NSArray *)sortArray:(NSArray *)array{
     
-//    for(int i = 0; i < array.count; i++){
+//    for(int i = 0; i < sortedArray.count; i++){
 //        NSLog(@"before sort..%@", array[i]);
 //    }
-
-    NSSortDescriptor *sortorder = [NSSortDescriptor sortDescriptorWithKey:nil ascending: YES];
-    NSArray * sorted = [array sortedArrayUsingDescriptors: [NSArray arrayWithObject: sortorder]];
-
-//    for(int i = 0; i < sorted.count; i++){
-//        NSLog(@"After sort..%@", sorted[i]);
-//    }
     
-    return sorted;
+ //apple framework sort
+//    NSSortDescriptor *sortorder = [NSSortDescriptor sortDescriptorWithKey:nil ascending: YES];
+//    NSMutableArray * sortedArray = [array sortedArrayUsingDescriptors: [NSArray arrayWithObject: sortorder]];
+     
+    //quick sort NSArray
+    if (array.count == 0) {
+        return array;
+    }
+    
+    // Use first item as pivot
+    NSNumber *pivot = array[0];
+    
+    // Creat temp arrays to hold values
+    NSMutableArray *leftArray = [NSMutableArray array];
+    NSMutableArray *rightArray = [NSMutableArray array];
+    
+    // All elements less than pivot go to left array
+    // All elements greater than pivot go to right array
+    for (NSInteger i = 1; i < array.count; i++) {
+        NSNumber *item = array[i];
+        if (item.integerValue < pivot.integerValue) {
+            [leftArray addObject:item];
+        } else {
+            [rightArray addObject:item];
+        }
+    }
+    
+    // Recursively build merged arrays
+    NSArray *leftMerged = [self sortArray:leftArray];
+    NSArray *rightMerged = [self sortArray:rightArray];
+    
+    // Build final array
+    NSMutableArray *sortedArray = [NSMutableArray array];
+    [sortedArray addObjectsFromArray:leftMerged];
+    [sortedArray addObject:pivot];
+    [sortedArray addObjectsFromArray:rightMerged];
+
+    return sortedArray;
 }
 
 
