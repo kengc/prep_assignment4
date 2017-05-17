@@ -19,6 +19,10 @@ int main(int argc, const char * argv[]) {
         
         //NSArray *unsortedArray = @[@7,@-2,@5,@10];
         
+        //NSArray *unsortedArray = @[@4, @5, @8, @5, @7, @8, @9, @8, @8, @7];
+        
+        //NSArray *unsortedArray = @[@1,@2,@3, @4];
+        
         NSArray *unsortedArray = @[@24.7,@25.0,@25.2,@25.6,@25.7,@26.1];
         
         SortArray *array = [[SortArray alloc] init];

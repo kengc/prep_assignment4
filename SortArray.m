@@ -40,7 +40,7 @@
     
     //then calculate
     long count = sortedAscending.count;
-    long medianPosition = ((count + 1) / 2);
+    long medianPosition = ((count) / 2);
    
     //NSLog(@"array count is..%ld", count);
     //NSLog(@"medianPosition is..%ld", medianPosition);
